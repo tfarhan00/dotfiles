@@ -1,0 +1,40 @@
+# Wallpaper
+image=/home/$USER/Pictures/wallpaper/wallpaper.jpg
+scaling=fill
+
+# Light blur
+effect-blur=5x3
+
+# Clock (requires indicator=true)
+indicator=true
+clock=true
+timestr=%H:%M
+datestr=%a, %d %b
+
+font=JetBrainsMono Nerd Font
+text-color=ebdbb2ff
+font-size=42
+
+# Hide the indicator circle completely
+indicator-radius=0
+indicator-thickness=0
+
+# Make all indicator colors transparent
+inside-color=00000000
+ring-color=00000000
+line-color=00000000
+separator-color=00000000
+key-hl-color=00000000
+bs-hl-color=00000000
+indicator-color=00000000
+indicator-ring-color=00000000
+
+# Hide password feedback
+text-ver-color=00000000
+text-wrong-color=00000000
+
+show-failed-attempts=false
+ignore-empty-password=true
+
+# Fade
+fade-in=0.25

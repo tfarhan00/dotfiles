@@ -1,0 +1,149 @@
+* {
+  font-family: "Hack Nerd Font";
+  font-size: 12px;
+  font-weight: 500;
+  min-height: 0;
+}
+
+window#waybar {
+  background-color: #282828;
+  color: #ebdbb2;
+}
+
+/* Clock */
+#clock {
+  color: #ebdbb2;
+  font-weight: 600;
+  padding: 0 14px;
+}
+
+/* Right side modules */
+#custom-screenshot,
+#pulseaudio,
+#backlight,
+#network,
+#battery,
+#tray,
+#custom-power {
+  padding: 0 8px;
+  color: #ebdbb2;
+  background-color: transparent;
+  font-size: 12px;
+}
+
+#custom-screenshot {
+  color: #83a598;
+  font-size: 12px;
+}
+
+#custom-screenshot:hover {
+  background-color: #3c3836;
+}
+
+#pulseaudio {
+  color: #ebdbb2;
+  font-size: 12px;
+}
+
+#pulseaudio:hover {
+  background-color: #3c3836;
+}
+
+#pulseaudio.muted {
+  color: #ebdbb2;
+}
+
+#backlight {
+  color: #ebdbb2;
+  font-size: 12px;
+}
+
+#network {
+  color: #ebdbb2;
+  font-size: 12px;
+}
+
+#network:hover {
+  background-color: #3c3836;
+}
+
+#network.disconnected {
+  color: #fb4934;
+}
+
+#battery {
+  color: #ebdbb2;
+  font-size: 12px;
+}
+
+#battery.charging,
+#battery.plugged {
+  color: #b8bb26;
+}
+
+#battery.warning:not(.charging) {
+  color: #fabd2f;
+}
+
+#battery.critical:not(.charging) {
+  color: #fb4934;
+  animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+#tray {
+  padding: 0 8px;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+}
+
+#custom-power {
+  color: #ebdbb2;
+  font-size: 12px;
+  padding: 0 12px;
+}
+
+#custom-power:hover {
+  background-color: #3c3836;
+}
+
+/* Media */
+#custom-media {
+  padding: 0 10px;
+  font-size: 10px;
+  color: #ebdbb2;
+}
+
+#custom-media.playing {
+  color: #ebdbb2;
+}
+
+#custom-media.paused {
+  color: #ebdbb2;
+}
+
+#custom-media.stopped {
+  color: #ebdbb2;
+}
+
+/* Tooltips */
+tooltip {
+  background-color: #1d2021;
+  border: 2px solid #504945;
+  border-radius: 4px;
+}
+
+tooltip label {
+  color: #ebdbb2;
+}

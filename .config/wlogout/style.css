@@ -1,0 +1,57 @@
+/* -----------------------------------------------------
+ * Gruvbox Dark Theme for wlogout
+ * (Minimal & No Layout Shift Version)
+ * ----------------------------------------------------- */
+
+window {
+    font-family: "JetBrains Mono", monospace; /* Change to your font */
+    font-size: 14pt;
+    background-color: rgba(40, 40, 40, 0.85); /* Gruvbox bg: #282828 with opacity */
+}
+
+button {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+    border: none;
+    background-color: #3c3836; /* Gruvbox bg1 */
+    margin: 5px;
+    color: #ebdbb2; /* Gruvbox fg */
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* On hover, use a slightly darker background shade */
+button:hover,
+button:focus {
+    background-color: #504945; /* Gruvbox bg2 */
+    color: #fbf1c7;            /* Gruvbox fg0 for slightly brighter text */
+}
+
+/* 
+ * Set the icon for each button.
+ * No hover effects are needed here.
+ */
+
+#lock {
+    background-image: image(url("/usr/share/wlogout/icons/lock.png"));
+}
+
+#logout {
+    background-image: image(url("/usr/share/wlogout/icons/logout.png"));
+}
+
+#suspend {
+    background-image: image(url("/usr/share/wlogout/icons/suspend.png"));
+}
+
+#hibernate {
+    background-image: image(url("/usr/share/wlogout/icons/hibernate.png"));
+}
+
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"));
+}
+
+#reboot {
+    background-image: image(url("/usr/share/wlogout/icons/reboot.png"));
+}

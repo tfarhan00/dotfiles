@@ -1,0 +1,23 @@
+# === Gruvbox Colors ===
+background-color=#282828dd
+text-color=#ebdbb2
+border-color=#3c3836
+progress-color=#d79921
+
+# === Layout ===
+border-size=2
+border-radius=8
+padding=12
+default-timeout=5000
+max-visible=5
+anchor=top-right
+margin=20
+font=JetBrains Mono 12
+
+# === Icons ===
+icons=1
+max-icon-size=32
+
+# === Behavior ===
+ignore-timeout=1
+group-by=app-name
