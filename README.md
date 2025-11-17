@@ -2,6 +2,9 @@
 
 ![screenshot](https://res.cloudinary.com/dd9nhl1mn/image/upload/v1763277951/screenshot-1763209882_ltqd9u.png)
 
+## Do i use this?
+YES! this is my daily driver setup besides my mac for apple related deving
+
 ## installed tools
 
 - cava (terminal audio visualizer)
