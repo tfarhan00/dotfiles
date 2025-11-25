@@ -1,6 +1,6 @@
-# my dotfiles for niri wm + arch linux :)
+# my dotfiles for Niri WM + Arch Linux :)
 
-![screenshot](https://res.cloudinary.com/dd9nhl1mn/image/upload/v1764044525/screenshot-1764043829_ppfudh.png)
+![screenshot](https://res.cloudinary.com/dd9nhl1mn/image/upload/v1764099192/screenshot-1764088615_ow7an2.png)
 
 a minimal, cohesive desktop by [hanebox](https://x.com/hanebox) built around the goat of WM -> [niri](https://github.com/YaLTeR/niri) - a scrollable-tiling compositor
 
@@ -14,28 +14,23 @@ a minimal, cohesive desktop by [hanebox](https://x.com/hanebox) built around the
 
 _pls buy amd instead_
 
-## must be installed
+## must be installed packages
 
-| tool         | description                                   |
-| ------------ | --------------------------------------------- |
-| **niri**     | scrollable-tiling wayland compositor          |
-| **waybar**   | customizable status bar                       |
-| **kitty**    | gpu-accelerated terminal (it's fast!)         |
-| **fuzzel**   | wayland-native app launcher                   |
-| **mako**     | lightweight notification daemon               |
-| **hyprlock** | screen locker                                 |
-| **wlogout**  | logout/power menu                             |
-| **waypaper** | wallpaper manager (using swaybg)              |
-| **starship** | cross-shell prompt                            |
-| **glow**     | terminal markdown viewer (simple and pretty!) |
+| tool         | description                           |
+| ------------ | ------------------------------------- |
+| **niri**     | scrollable-tiling wayland compositor  |
+| **waybar**   | customizable status bar               |
+| **kitty**    | gpu-accelerated terminal (it's fast!) |
+| **fuzzel**   | wayland-native app launcher           |
+| **mako**     | lightweight notification daemon       |
+| **hyprlock** | screen locker                         |
+| **wlogout**  | logout/power menu                     |
+| **waypaper** | wallpaper manager (using swaybg)      |
+| **starship** | cross-shell prompt                    |
 
 ## theme
 
-dimmed monokai color scheme for mostly terminal and bar (planning to make it as system wide as possible)
-
-- background: `#1e1e1e`
-- foreground: `#b8bcb9`
-- accent: `#568ea3` (blue), `#c37033` (orange)
+[base2tone mall dark](https://github.com/kovidgoyal/kitty-themes/blob/master/themes/base2tone-mall-dark.conf)
 
 ## prerequisites
 
@@ -49,14 +44,16 @@ dimmed monokai color scheme for mostly terminal and bar (planning to make it as 
 
 ```bash
 # core packages
-sudo pacman -S niri waybar kitty fuzzel mako hyprlock wlogout glow starship
+sudo pacman -S niri waybar kitty fuzzel mako hyprlock wlogout starship
 
-# additional utilities
-sudo pacman -S grim slurp brightnessctl wireplumber pipewire pavucontrol
+# additional utilities (important)
+sudo pacman -S grim slurp brightnessctl wireplumber pipewire pavucontrol playerctl swaybg swayidle
 
 # aur packages (using yay or paru)
-yay -S waypaper swaybg swayidle
+yay -S waypaper
 ```
+
+**NOTE: no need to install niri if you're already on niri**
 
 ### 2. install fonts
 
@@ -72,8 +69,8 @@ yay -S otf-commit-mono # commit mono
 ### 3. clone the repo
 
 ```bash
-git clone https://github.com/yourusername/dotfiles.git ~/Developer/dotfiles
-cd ~/Developer/dotfiles
+git clone https://github.com/tfarhan00/dotfiles.git ~/han-dotfiles
+cd ~/han-dotfiles
 ```
 
 ### 4. backup existing configs (optional)
@@ -82,26 +79,15 @@ cd ~/Developer/dotfiles
 mkdir -p ~/.config-backup
 cp -r ~/.config/niri ~/.config/waybar ~/.config/kitty ~/.config/fuzzel \
       ~/.config/mako ~/.config/hyprlock ~/.config/wlogout ~/.config/waypaper \
-      ~/.config/glow ~/.config/starship.toml ~/.config-backup/ 2>/dev/null
+      ~/.config/starship.toml ~/.config-backup/ 2>/dev/null
 ```
 
-### 5. create symlinks
+### 5. copy or replace your config with the new one
+
+example:
 
 ```bash
-# create config directory if needed
-mkdir -p ~/.config
-
-# symlink all configs
-ln -sf ~/Developer/dotfiles/.config/hypr ~/.config/hypr
-ln -sf ~/Developer/dotfiles/.config/niri ~/.config/niri
-ln -sf ~/Developer/dotfiles/.config/waybar ~/.config/waybar
-ln -sf ~/Developer/dotfiles/.config/kitty ~/.config/kitty
-ln -sf ~/Developer/dotfiles/.config/fuzzel ~/.config/fuzzel
-ln -sf ~/Developer/dotfiles/.config/mako ~/.config/mako
-ln -sf ~/Developer/dotfiles/.config/wlogout ~/.config/wlogout
-ln -sf ~/Developer/dotfiles/.config/waypaper ~/.config/waypaper
-ln -sf ~/Developer/dotfiles/.config/glow ~/.config/glow
-ln -sf ~/Developer/dotfiles/.config/starship.toml ~/.config/starship.toml
+cp -r ~/han-dotfiles/waybar ~/.config/waybar
 ```
 
 ### 6. make waybar media script executable
