@@ -2,15 +2,19 @@
 
 ![screenshot](https://res.cloudinary.com/dd9nhl1mn/image/upload/v1764044525/screenshot-1764043829_ppfudh.png)
 
-a minimal, cohesive wayland desktop built around [niri](https://github.com/YaLTeR/niri) - a scrollable-tiling compositor.
+a minimal, cohesive desktop by [hanebox](https://x.com/hanebox) built around the goat of WM -> [niri](https://github.com/YaLTeR/niri) - a scrollable-tiling compositor
 
-## my system
+## my system (running hot but fine)
 
 - acer swift 14 (intel core ultra 5 / intel arc)
+- 16 gigs of ram
+- 512 nvme ssd storage
 - arch linux + niri (wayland)
 - 2880x1800 @ 120hz
 
-## what's included
+_pls buy amd instead_
+
+## must be installed
 
 | tool         | description                                   |
 | ------------ | --------------------------------------------- |
@@ -19,7 +23,7 @@ a minimal, cohesive wayland desktop built around [niri](https://github.com/YaLTe
 | **kitty**    | gpu-accelerated terminal (it's fast!)         |
 | **fuzzel**   | wayland-native app launcher                   |
 | **mako**     | lightweight notification daemon               |
-| **swaylock** | screen locker                                 |
+| **hyprlock** | screen locker                                 |
 | **wlogout**  | logout/power menu                             |
 | **waypaper** | wallpaper manager (using swaybg)              |
 | **starship** | cross-shell prompt                            |
@@ -45,7 +49,7 @@ dimmed monokai color scheme for mostly terminal and bar (planning to make it as 
 
 ```bash
 # core packages
-sudo pacman -S niri waybar kitty fuzzel mako swaylock wlogout glow starship
+sudo pacman -S niri waybar kitty fuzzel mako hyprlock wlogout glow starship
 
 # additional utilities
 sudo pacman -S grim slurp brightnessctl wireplumber pipewire pavucontrol
@@ -57,8 +61,13 @@ yay -S waypaper swaybg swayidle
 ### 2. install fonts
 
 ```bash
-sudo pacman -S ttf-hack-nerd ttf-jetbrains-mono-nerd
+sudo pacman -S otf-commit-mono-nerd  # commit mono nerd font
+yay -S otf-commit-mono # commit mono
 ```
+
+- Commit Mono font family name: "CommitMono"
+- Commit Mono Nerd Font family name: "CommitMono Nerd Font"
+  > NOTE: this is important to remember so you can use these fonts correctly ;)
 
 ### 3. clone the repo
 
@@ -72,7 +81,7 @@ cd ~/Developer/dotfiles
 ```bash
 mkdir -p ~/.config-backup
 cp -r ~/.config/niri ~/.config/waybar ~/.config/kitty ~/.config/fuzzel \
-      ~/.config/mako ~/.config/swaylock ~/.config/wlogout ~/.config/waypaper \
+      ~/.config/mako ~/.config/hyprlock ~/.config/wlogout ~/.config/waypaper \
       ~/.config/glow ~/.config/starship.toml ~/.config-backup/ 2>/dev/null
 ```
 
@@ -83,12 +92,12 @@ cp -r ~/.config/niri ~/.config/waybar ~/.config/kitty ~/.config/fuzzel \
 mkdir -p ~/.config
 
 # symlink all configs
+ln -sf ~/Developer/dotfiles/.config/hypr ~/.config/hypr
 ln -sf ~/Developer/dotfiles/.config/niri ~/.config/niri
 ln -sf ~/Developer/dotfiles/.config/waybar ~/.config/waybar
 ln -sf ~/Developer/dotfiles/.config/kitty ~/.config/kitty
 ln -sf ~/Developer/dotfiles/.config/fuzzel ~/.config/fuzzel
 ln -sf ~/Developer/dotfiles/.config/mako ~/.config/mako
-ln -sf ~/Developer/dotfiles/.config/swaylock ~/.config/swaylock
 ln -sf ~/Developer/dotfiles/.config/wlogout ~/.config/wlogout
 ln -sf ~/Developer/dotfiles/.config/waypaper ~/.config/waypaper
 ln -sf ~/Developer/dotfiles/.config/glow ~/.config/glow
@@ -114,8 +123,8 @@ eval "$(starship init zsh)"   # for zsh
 ### 8. setup lockscreen wallpaper
 
 ```bash
-mkdir -p ~/Pictures
-# place your lockscreen wallpaper at ~/Pictures/screenlock.png
+mkdir -p ~/Pictures/screenlock
+# place your lockscreen wallpaper at ~/Pictures/screenlock/main.png (or jpg)
 ```
 
 ### 9. start niri

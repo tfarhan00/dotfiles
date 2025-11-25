@@ -1,5 +1,5 @@
 * {
-  font-family: "Hack Nerd Font";
+  font-family: "CommitMono Nerd Font";
   font-size: 12px;
   font-weight: 500;
   min-height: 0;
@@ -146,40 +146,4 @@ tooltip {
 
 tooltip label {
   color: #97959d;
-}
-
-/* Calendar */
-calendar {
-  background-color: #1e1e1f;
-  color: #97959d;
-  border: 2px solid #515053;
-  border-radius: 4px;
-  padding: 8px;
-}
-
-calendar:selected {
-  background-color: #2b2b2c;
-  color: #e5dbff;
-  border-radius: 4px;
-}
-
-calendar:indeterminate {
-  color: #6a686e;
-}
-
-calendar.header {
-  background-color: #1e1e1f;
-  color: #69b5f7;
-  font-weight: bold;
-  border-bottom: 1px solid #515053;
-  padding: 4px;
-}
-
-calendar.button {
-  background-color: transparent;
-  color: #97959d;
-}
-
-calendar.button:hover {
-  background-color: #2b2b2c;
 }
