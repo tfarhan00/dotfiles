@@ -34,11 +34,11 @@
       "weeks-pos": "right",
       "on-scroll": 1,
       "format": {
-        "months": "<span color='#69b5f7'><b>{}</b></span>",
-        "days": "<span color='#97959d'><b>{}</b></span>",
-        "weeks": "<span color='#6a686e'><b>W{}</b></span>",
-        "weekdays": "<span color='#69b5f7'><b>{}</b></span>",
-        "today": "<span color='#e5dbff' background='#2b2b2c'><b><u>{}</u></b></span>"
+        "months": "<span color='#ebdbb2'><b>{}</b></span>",
+        "days": "<span color='#ebdbb2'><b>{}</b></span>",
+        "weeks": "<span color='#d5c4a1'><b>W{}</b></span>",
+        "weekdays": "<span color='#fabd2f'><b>{}</b></span>",
+        "today": "<span color='#fb4934'><b><u>{}</u></b></span>"
       }
     }
   },
@@ -96,11 +96,7 @@
   },
   "tray": {
     "icon-size": 14,
-    "spacing": 6,
-    "show-passive-items": true,
-    "reverse-direction": false,
-    "expander": true,
-    "indirect": true
+    "spacing": 6
   },
   "custom/power": {
     "format": "pwr",

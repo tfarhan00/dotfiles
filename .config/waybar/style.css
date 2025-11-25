@@ -6,13 +6,13 @@
 }
 
 window#waybar {
-  background-color: #1e1e1e;
-  color: #b8bcb9;
+  background-color: #1e1e1f;
+  color: #97959d;
 }
 
 /* Clock */
 #clock {
-  color: #b8bcb9;
+  color: #97959d;
   font-weight: 600;
   padding: 0 14px;
 }
@@ -26,67 +26,67 @@ window#waybar {
 #tray,
 #custom-power {
   padding: 0 8px;
-  color: #b8bcb9;
+  color: #97959d;
   background-color: transparent;
   font-size: 12px;
 }
 
 #custom-screenshot {
-  color: #568ea3;
+  color: #69b5f7;
   font-size: 12px;
 }
 
 #custom-screenshot:hover {
-  background-color: #292c31;
+  background-color: #2b2b2c;
 }
 
 #pulseaudio {
-  color: #b8bcb9;
+  color: #97959d;
   font-size: 12px;
 }
 
 #pulseaudio:hover {
-  background-color: #292c31;
+  background-color: #2b2b2c;
 }
 
 #pulseaudio.muted {
-  color: #b8bcb9;
+  color: #6a686e;
 }
 
 #backlight {
-  color: #b8bcb9;
+  color: #97959d;
   font-size: 12px;
 }
 
 #network {
-  color: #b8bcb9;
+  color: #97959d;
   font-size: 12px;
 }
 
 #network:hover {
-  background-color: #292c31;
+  background-color: #2b2b2c;
 }
 
 #network.disconnected {
-  color: #be3e48;
+  color: #a17efc;
 }
 
 #battery {
-  color: #b8bcb9;
+  color: #97959d;
   font-size: 12px;
 }
 
 #battery.charging,
 #battery.plugged {
-  color: #869a3a;
+  color: #75bfff;
 }
 
 #battery.warning:not(.charging) {
-  color: #c4a535;
+  color: #b3dbff;
 }
 
 #battery.critical:not(.charging) {
-  color: #fb001e;
+  color: #a17efc;
   animation: blink 1s linear infinite;
 }
 
@@ -109,77 +109,77 @@ window#waybar {
 }
 
 #custom-power {
-  color: #b8bcb9;
+  color: #97959d;
   font-size: 12px;
   padding: 0 12px;
 }
 
 #custom-power:hover {
-  background-color: #292c31;
+  background-color: #2b2b2c;
 }
 
 /* Media */
 #custom-media {
   padding: 0 10px;
   font-size: 10px;
-  color: #b8bcb9;
+  color: #97959d;
 }
 
 #custom-media.playing {
-  color: #b8bcb9;
+  color: #75bfff;
 }
 
 #custom-media.paused {
-  color: #b8bcb9;
+  color: #6a686e;
 }
 
 #custom-media.stopped {
-  color: #b8bcb9;
+  color: #5e5c60;
 }
 
 /* Tooltips */
 tooltip {
-  background-color: #1e1e1e;
-  border: 2px solid #3a3c43;
+  background-color: #1e1e1f;
+  border: 2px solid #515053;
   border-radius: 4px;
 }
 
 tooltip label {
-  color: #b8bcb9;
+  color: #97959d;
 }
 
 /* Calendar */
 calendar {
-  background-color: #1e1e1e;
-  color: #b8bcb9;
-  border: 2px solid #3a3c43;
+  background-color: #1e1e1f;
+  color: #97959d;
+  border: 2px solid #515053;
   border-radius: 4px;
   padding: 8px;
 }
 
 calendar:selected {
-  background-color: #292c31;
-  color: #fcffb8;
+  background-color: #2b2b2c;
+  color: #e5dbff;
   border-radius: 4px;
 }
 
 calendar:indeterminate {
-  color: #888987;
+  color: #6a686e;
 }
 
 calendar.header {
-  background-color: #1e1e1e;
-  color: #568ea3;
+  background-color: #1e1e1f;
+  color: #69b5f7;
   font-weight: bold;
-  border-bottom: 1px solid #3a3c43;
+  border-bottom: 1px solid #515053;
   padding: 4px;
 }
 
 calendar.button {
   background-color: transparent;
-  color: #b8bcb9;
+  color: #97959d;
 }
 
 calendar.button:hover {
-  background-color: #292c31;
+  background-color: #2b2b2c;
 }
