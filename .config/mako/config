@@ -1,8 +1,8 @@
-# === Gruvbox Colors ===
-background-color=#282828dd
-text-color=#ebdbb2
-border-color=#3c3836
-progress-color=#d79921
+# === Dimmed Monokai Colors ===
+background-color=#1e1e1edd
+text-color=#b8bcb9
+border-color=#3a3c43
+progress-color=#c4a535
 
 # === Layout ===
 border-size=2

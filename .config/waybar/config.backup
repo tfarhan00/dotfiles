@@ -96,11 +96,7 @@
   },
   "tray": {
     "icon-size": 14,
-    "spacing": 6,
-    "show-passive-items": true,
-    "reverse-direction": false,
-    "expander": true,
-    "indirect": true
+    "spacing": 6
   },
   "custom/power": {
     "format": "pwr",

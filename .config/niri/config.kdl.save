@@ -12,7 +12,7 @@ environment {
     // Qt applications
     QT_QPA_PLATFORM "xcb"
     QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
-    QT_SCALE_FACTOR "1"
+    QT_SCALE_FACTOR "2"
     
     // GTK applications
     GDK_BACKEND "wayland"
@@ -32,13 +32,6 @@ environment {
     // XDG specifications
     XDG_CURRENT_DESKTOP "niri"
     XDG_SESSION_TYPE "wayland"
-    
-    // Cursor theme (optional - adjust to your preference)
-    // XCURSOR_THEME "Adwaita"
-    // XCURSOR_SIZE "24"
-    
-    // Remove X11 display to prevent fallback (optional)
-    // DISPLAY null
 }
 
 
@@ -147,7 +140,7 @@ output "eDP-1" {
 
 
 // 4K 60hz monitor
-/-output "HDMI-A-1" {
+output "HDMI-A-1" {
 	mode "3840x2160@60"
 
 	scale 2
@@ -229,7 +222,7 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#3C3836"
+        active-color "#83a598"
 
         // Color of the ring on inactive monitors.
         //
@@ -384,11 +377,6 @@ window-rule {
 
 window-rule {
     match app-id="org.gnome.Nautilus$"
-    open-floating true
-}
-
-window-rule {
-    match app-id="^imv$"
     open-floating true
 }
 
