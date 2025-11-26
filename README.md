@@ -1,14 +1,20 @@
-# my dotfiles for Niri WM + Arch Linux :)
+# Serene Dotfiles (arch + niri wm)
 
 ![screenshot](https://res.cloudinary.com/dd9nhl1mn/image/upload/v1764099192/screenshot-1764088615_ow7an2.png)
 
-a minimal, cohesive desktop by [hanebox](https://x.com/hanebox) built around the goat of WM -> [niri](https://github.com/YaLTeR/niri) - a scrollable-tiling compositor
+<details>
+
+<summary>wlogout Preview</summary>
+
+![screenshot](https://res.cloudinary.com/dd9nhl1mn/image/upload/v1764153046/screenshot-1764152950_mlvsnf.png)
+
+</details>
 
 ## my system (running hot but fine)
 
-- acer swift 14 (intel core ultra 5 / intel arc)
+- acer swift go 14 (intel core ultra 5 / intel arc)
 - 16 gigs of ram
-- 512 nvme ssd storage
+- 512 gigs nvme ssd storage
 - arch linux + niri (wayland)
 - 2880x1800 @ 120hz
 
@@ -30,13 +36,11 @@ _pls buy amd instead_
 
 ## theme
 
-[base2tone mall dark](https://github.com/kovidgoyal/kitty-themes/blob/master/themes/base2tone-mall-dark.conf)
+[base2tone mall dark](https://base2t.one/demo/mall)
 
 ## prerequisites
 
 - arch linux (or arch-based distro)
-- wayland-compatible gpu drivers
-- a nerd font (configs use hack nerd font / jetbrains mono)
 
 ## installation
 
@@ -62,9 +66,12 @@ sudo pacman -S otf-commit-mono-nerd  # commit mono nerd font
 yay -S otf-commit-mono # commit mono
 ```
 
-- Commit Mono font family name: "CommitMono"
-- Commit Mono Nerd Font family name: "CommitMono Nerd Font"
-  > NOTE: this is important to remember so you can use these fonts correctly ;)
+**Family Name:**
+
+- "CommitMono"
+- "CommitMono Nerd Font"
+
+  > NOTE: this is important to remember so you can use these fonts correctly inside a config or a .css style file ;)
 
 ### 3. clone the repo
 
@@ -179,6 +186,10 @@ click the power button (`pwr`) to open wlogout.
 
 ## customization
 
+### changing wallpaper
+
+open `waypaper` app then choose swaybg for backend and set any wallpaper you like :)
+
 ### display configuration
 
 edit `~/.config/niri/config.kdl` to configure your monitors:
@@ -236,7 +247,7 @@ pkill mako && mako &
 ## credits
 
 - [niri](https://github.com/YaLTeR/niri) - scrollable-tiling wayland compositor
-- [dimmed monokai](https://github.com/distantcam/DistantVim) - color scheme inspiration
+- [base2tone mall dark](https://base2t.one/demo/mall) - color scheme inspiration
 - [starship](https://starship.rs) - cross-shell prompt
 
 ---
