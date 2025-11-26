@@ -173,7 +173,7 @@ output "eDP-1" {
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 14
+    gaps 10
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -332,7 +332,7 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
 spawn-at-startup "waypaper" "--restore"
-spawn-at-startup "swayidle" "-w" "timeout" "600" "brightnessctl -s set 10%" "resume" "brightnessctl -r" "timeout" "600" "hyprlock" "timeout" "1200" "niri msg action power-off-monitors" "timeout" "1200" "systemctl suspend" "before-sleep" "hyprlock"
+spawn-at-startup "swayidle" "-w" "timeout" "600" "brightnessctl -s set 10%" "resume" "brightnessctl -r" "timeout" "600" "pidof hyprlock || hyprlock" "timeout" "1200" "niri msg action power-off-monitors" "timeout" "1200" "systemctl suspend" "before-sleep" "pidof hyprlock || hyprlock"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -418,7 +418,7 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    geometry-corner-radius 4 
+    geometry-corner-radius 8 
     clip-to-geometry true
 }
 
