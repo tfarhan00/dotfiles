@@ -1,19 +1,20 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 28,
-  "spacing": 2,
+  "height": 26,
+  "spacing": 0,
   "modules-left": [
     "clock",
     "custom/media"
   ],
   "modules-center": [],
   "modules-right": [
+    "tray",
     "pulseaudio",
     "backlight",
     "battery",
     "network",
-    "tray",
+    "bluetooth",
     "custom/power"
   ],
   "custom/media": {
@@ -45,23 +46,11 @@
   "pulseaudio": {
     "format": "vol {volume}%",
     "format-muted": "muted",
-    "format-icons": {
-      "default": [
-        "󰕿",
-        "󰖀",
-        "󰕾"
-      ]
-    },
-    "on-click": "pavucontrol",
+    "on-click": "pgrep -x pavucontrol || pavucontrol",
     "tooltip": false
   },
   "backlight": {
     "format": "br {percent}%",
-    "format-icons": [
-      "󰃞",
-      "󰃟",
-      "󰃠"
-    ],
     "tooltip": false
   },
   "battery": {
@@ -72,39 +61,31 @@
     "format": "bat {capacity}%",
     "format-charging": "chrg {capacity}%",
     "format-plugged": "plgd {capacity}%",
-    "format-icons": [
-      "󰂃",
-      "󰁺",
-      "󰁻",
-      "󰁼",
-      "󰁽",
-      "󰁾",
-      "󰁿",
-      "󰂀",
-      "󰂁",
-      "󰂂",
-      "󰁹"
-    ],
     "tooltip-format": "{timeTo}"
   },
   "network": {
     "format-wifi": "wifi",
     "format-ethernet": "lan",
     "format-disconnected": "disc",
-    "on-click": "kitty -e impala",
+    "on-click": "pgrep -x impala || foot -e impala",
     "tooltip-format": "{essid} ({signalStrength}%)"
   },
+  "bluetooth": {
+    "format": "bt",
+    "format-disabled": "bt off",
+    "format-connected": "bt ({num_connections})",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "on-click": "pgrep -x bluetui || foot -e bluetui"
+  },
   "tray": {
-    "icon-size": 14,
-    "spacing": 6,
-    "show-passive-items": true,
-    "reverse-direction": false,
-    "expander": true,
-    "indirect": true
+    "icon-size": 12,
+    "spacing": 6
   },
   "custom/power": {
     "format": "pwr",
-    "on-click": "wlogout",
+    "on-click": "pgrep -x wlogout || wlogout",
     "tooltip": false
   }
 }

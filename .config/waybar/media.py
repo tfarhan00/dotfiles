@@ -34,25 +34,24 @@ def get_player_status():
             ['playerctl'] + player_args + ['metadata', 'title'], 
             stderr=subprocess.DEVNULL
         ).decode('utf-8').strip()
+
+
+        max_length = 50
+        if len(title) > max_length:
+            title = title[:max_length-3] + "..."
         
         # Create display text
         if status == "Playing":
-            icon = "󰏤"  # Play icon
-            text = f"{artist} - {title}"
+            text = f"\"{title}\" is playing"
         elif status == "Paused":
-            icon = "󰐊"  # Pause icon
-            text = f"{artist} - {title}"
+            text = f"\"{title}\" is paused"
         else:
             icon = ""  # Stop icon
             text = ""
         
-        # Truncate long text
-        max_length = 50
-        if len(text) > max_length:
-            text = text[:max_length-3] + "..."
         
         output = {
-            "text": f"{icon} {text}",
+            "text": f"{text}",
             "tooltip": f"{artist}\n{title}\nStatus: {status}",
             "class": status.lower(),
             "alt": status

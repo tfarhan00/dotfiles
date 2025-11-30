@@ -1,0 +1,11 @@
+[Default Applications]
+x-scheme-handler/http=helium-browser.desktop
+x-scheme-handler/https=helium-browser.desktop
+text/html=helium-browser.desktop
+text/xml=helium-browser.desktop
+application/xhtml+xml=helium-browser.desktop
+application/xml=helium-browser.desktop
+video/webm=mpv.desktop
+
+[Added Associations]
+video/webm=mpv.desktop;

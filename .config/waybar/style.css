@@ -10,7 +10,6 @@ window#waybar {
   color: #97959d;
 }
 
-/* Clock */
 #clock {
   color: #97959d;
   font-weight: 600;
@@ -24,19 +23,21 @@ window#waybar {
 #network,
 #battery,
 #tray,
+#bluetooth,
+#workspaces button,
 #custom-power {
-  padding: 0 8px;
+  padding: 0 10px;
   color: #97959d;
   background-color: transparent;
   font-size: 12px;
 }
 
-#custom-screenshot {
-  color: #69b5f7;
-  font-size: 12px;
+#workspaces button {
+  border-radius: 0;
+  transition: none;
 }
 
-#custom-screenshot:hover {
+#workspaces button.focused {
   background-color: #2b2b2c;
 }
 
@@ -82,12 +83,16 @@ window#waybar {
 }
 
 #battery.warning:not(.charging) {
-  color: #b3dbff;
+  color: #97959d;
 }
 
 #battery.critical:not(.charging) {
   color: #a17efc;
   animation: blink 1s linear infinite;
+}
+
+#bluetooth:hover {
+  background-color: #2b2b2c;
 }
 
 @keyframes blink {
@@ -108,10 +113,25 @@ window#waybar {
   -gtk-icon-effect: highlight;
 }
 
-#custom-power {
+#custom-kdeconnect {
+  padding: 0 10px;
   color: #97959d;
-  font-size: 12px;
-  padding: 0 12px;
+}
+
+#custom-kdeconnect.connected {
+  color: #75bfff;
+}
+
+#custom-kdeconnect.paired {
+  color: #f9e2af;
+}
+
+#custom-kdeconnect.disconnected {
+  color: #97959d; /* Red - no devices */
+}
+
+#custom-kdeconnect.error {
+  color: #97959d; /* Orange - error */
 }
 
 #custom-power:hover {
@@ -120,13 +140,13 @@ window#waybar {
 
 /* Media */
 #custom-media {
-  padding: 0 10px;
+  padding: 0 8px;
   font-size: 10px;
   color: #97959d;
 }
 
 #custom-media.playing {
-  color: #75bfff;
+  color: #6a686e;
 }
 
 #custom-media.paused {

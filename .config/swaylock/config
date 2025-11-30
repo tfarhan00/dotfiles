@@ -1,0 +1,66 @@
+# Swaylock config with Base2Tone Sea theme
+# Place in ~/.config/swaylock/config
+
+# Daemon mode
+daemonize
+
+# Wallpaper
+image=~/Pictures/screenlock/dawn.jpg
+scaling=fill
+
+# Base2Tone Sea color scheme
+color=1d262fff
+
+# Inside colors (when typing/idle)
+inside-color=1d262f
+inside-clear-color=1d262f
+inside-caps-lock-color=1d262f
+inside-ver-color=627d98
+inside-wrong-color=c94922
+
+# Ring colors
+ring-color=627d98
+ring-clear-color=3d5e75
+ring-caps-lock-color=ffcc33
+ring-ver-color=6cb8e6
+ring-wrong-color=e6594c
+
+# Line (between ring and inside)
+line-color=00000000
+line-clear-color=00000000
+line-caps-lock-color=00000000
+line-ver-color=00000000
+line-wrong-color=00000000
+
+# Text colors
+text-color=c7cdd1
+text-clear-color=c7cdd1
+text-caps-lock-color=ffcc33
+text-ver-color=6cb8e6
+text-wrong-color=ffffff
+
+# Key highlight
+key-hl-color=6cb8e6
+
+# Backspace highlight
+bs-hl-color=e6594c
+
+# Separator color
+separator-color=00000000
+
+# Indicator settings
+indicator-radius=120
+indicator-thickness=12
+show-failed-attempts
+
+# Font
+font=sans-serif
+font-size=14
+
+# Disable keyboard layout indicator
+hide-keyboard-layout
+
+# Grace period (seconds before locking input)
+grace=2
+grace-no-mouse
+grace-no-touch

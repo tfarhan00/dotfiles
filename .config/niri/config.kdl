@@ -6,37 +6,40 @@
 
 
 environment {
+   
+    TERMINAL "kitty" 
+
     // Force Electron apps to use native Wayland
     ELECTRON_OZONE_PLATFORM_HINT "auto"
-    
+
     // Qt applications
     QT_QPA_PLATFORM "xcb"
     QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
     QT_SCALE_FACTOR "1"
-    
+
     // GTK applications
     GDK_BACKEND "wayland"
-    
+
     // SDL applications
     SDL_VIDEODRIVER "wayland"
-    
+
     // Clutter applications
     CLUTTER_BACKEND "wayland"
-    
+
     // Mozilla/Firefox
     MOZ_ENABLE_WAYLAND "1"
-    
+
     // Java applications
     _JAVA_AWT_WM_NONREPARENTING "1"
-    
+
     // XDG specifications
     XDG_CURRENT_DESKTOP "niri"
     XDG_SESSION_TYPE "wayland"
-    
+
     // Cursor theme (optional - adjust to your preference)
     // XCURSOR_THEME "Adwaita"
     // XCURSOR_SIZE "24"
-    
+
     // Remove X11 display to prevent fallback (optional)
     // DISPLAY null
 }
@@ -75,7 +78,7 @@ input {
         // drag false
         // drag-lock
         natural-scroll
-	      scroll-factor 0.35
+	    scroll-factor 0.35
         // accel-speed 0.2
         // accel-profile "flat"
         // scroll-method "two-finger"
@@ -221,8 +224,8 @@ layout {
         // off
 
         // How many logical pixels the ring extends out from the windows.
-        width 1.5 
-        
+        width 1.5
+
 	// Colors can be set in a variety of ways:
         // - CSS named colors: "red"
         // - RGB hex: "#rgb", "#rgba", "#rrggbb", "#rrggbbaa"
@@ -330,9 +333,8 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "waybar"
 spawn-at-startup "waypaper" "--restore"
-spawn-at-startup "swayidle" "-w" "timeout" "600" "brightnessctl -s set 10%" "resume" "brightnessctl -r" "timeout" "600" "pidof hyprlock || hyprlock" "timeout" "1200" "niri msg action power-off-monitors" "timeout" "1200" "systemctl suspend" "before-sleep" "pidof hyprlock || hyprlock"
+spawn-at-startup "swayidle" "-w" "timeout" "300" "brightnessctl -s set 10%" "resume" "brightnessctl -r" "timeout" "600" "swaylock -f" "timeout" "660" "niri msg action power-off-monitors" "resume" "niri msg action power-on-monitors" "timeout" "1800" "systemctl suspend" "before-sleep" "swaylock -f" "lock" "swaylock -f"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -418,8 +420,18 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    geometry-corner-radius 8 
+    geometry-corner-radius 8
     clip-to-geometry true
+}
+
+
+gestures {
+    hot-corners {
+        off
+        // top-right
+        // bottom-left
+        // bottom-right
+    }
 }
 
 binds {
@@ -433,14 +445,12 @@ binds {
     // Most actions that you can bind here can also be invoked programmatically with
     // `niri msg action do-something`.
 
-    // Mod-Shift-/, which is usually the same as Mod-?,
-    // shows a list of important hotkeys.
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    // Suggested binds for running programs: terminal, app launcher, screen locker.
+    Mod+B hotkey-overlay-title="Open The Best Browser: Helium" { spawn "helium-browser";}
+    Mod+D hotkey-overlay-title="Open tofi skrtt" { spawn-sh "tofi-drun --drun-launch=true"; }   
     Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-    Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
+    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock" "-f";  }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
@@ -667,9 +677,9 @@ binds {
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
 
-    Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
+    Mod+Shift+S { screenshot; }
+    Ctrl+Mod+Shift+S { screenshot-screen; }
+    Ctrl+Alt+Mod+Shift+S { screenshot-window; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
@@ -689,7 +699,7 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 
-    Mod+Shift+S {
+    /-Mod+Shift+S {
         spawn "bash" "-lc" "
             file=~/Pictures/screenshot-$(date +%s).png;
             grim -g \"$(slurp)\" \"$file\" &&
@@ -697,7 +707,7 @@ binds {
         "
     }
 
-    Ctrl+Mod+Shift+S {
+    /-Ctrl+Mod+Shift+S {
         spawn "bash" "-lc" "
             file=~/Pictures/screenshot-$(date +%s).png;
             grim \"$file\" &&
