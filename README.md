@@ -1,7 +1,5 @@
 niri wm + arch linux dotfiles
 
-![test](https://raw.imgquik.app/421546c2)
-
 color scheme: [base2tone mall dark](https://base2t.one/demo/mall)
 
 display manager: [LY](https://github.com/fairyglade/ly)
